@@ -10,7 +10,17 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    //跨域代理
+    proxyTable: {
+      '/api': { //匹配所有'/api'开头的请求路径
+        target: 'http://localhost:4000',
+        changeOrigin: true,//支持跨域
+        pathRewrite: { //重写路径,去掉开头的'/api
+          '^/api': ''
+        }
+      }
+    
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
