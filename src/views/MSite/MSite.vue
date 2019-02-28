@@ -3,18 +3,7 @@
     msite
     <section class="msite">
       <!--首页头部-->
-     <!-- <header class="header">
-          <span class="header_search">
-            <i class="iconfont icon-sousuo"></i>
-          </span>
-        <span class="header_title">
-            <span class="header_title_text ellipsis"></span>
-          </span>
-        <span class="header_login">
-            <span class="header_login_text">登录|注册</span>
-          </span>
-      </header>-->
-      <header-top title="南宁">
+      <header-top :title="address.name">
         <span class="header_search" slot="left">
           <i class="iconfont icon-sousuo"></i>
           </span>
@@ -255,6 +244,7 @@
 </template>
 
 <script>
+import  {mapState} from 'vuex'
 import HeaderTop from './../../components/Header';
 import ShopList from './components/ShopList'
 import Swiper from 'swiper'
@@ -277,6 +267,9 @@ export default {
     });
 
   },
+  computed: {
+    ...mapState(['address']),
+  }
 };
 </script>
 
