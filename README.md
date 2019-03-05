@@ -1,4 +1,4 @@
-# take_out
+# skt-chat
 
 > A Vue.js project
 
